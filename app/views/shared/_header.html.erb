@@ -1,0 +1,17 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="row container">
+      <div class="pull-left col-md-3">
+        <h1>ContactManager</h1>
+      </div>
+      <% if current_user.present? %>
+      <div class="pull-right col-md-3">
+        <% if user_signed_in? %>
+          <strong><%= current_user.email %></strong>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link btn btn-default'  %>
+        <% end %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</nav>
