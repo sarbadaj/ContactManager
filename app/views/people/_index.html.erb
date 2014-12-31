@@ -1,12 +1,10 @@
 <nav class="navbar navbar-default">
   <div class="row">
     <div class="pull-left col-md-3">
-      <h2>People</h2>
+      <h4>People</h4>
     </div>
     <div class="pull-right col-md-3">
-      <button class="btn btn-default nav">
-        <%= link_to "Add Person", new_user_person_path(current_user.id), remote: true %>
-      </button>
+      <%= link_to "Add Person", new_user_person_path(current_user.id), :class => 'navbar-link btn btn-default', remote: true %>
     </div>
   </div>
 </nav>

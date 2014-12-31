@@ -4,13 +4,11 @@ class PeopleController < ApplicationController
   end
 
   def index
-    @user = User.find(params[:user_id])
-    @people = @user.people
+    @people = current_user.people
   end
 
   def create
-    @user = User.find(params[:user_id])
-    @person = @user.people.new(person_params)
+    @person = current_user.people.new(person_params)
     if @person.save
       redirect_to users_path
     else
@@ -20,18 +18,15 @@ class PeopleController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:user_id])
-    @person = @user.people.find(params[:id])
+    @person = current_user.people.find(params[:id])
   end
 
   def show
-    @user = User.find(params[:user_id])
-    @person = @user.people.find(params[:id])
+    @person = current_user.people.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:user_id])
-    @person = @user.people.find(params[:id])
+    @person = current_user.people.find(params[:id])
     if @person.update(person_params)
       redirect_to users_path
     else
@@ -40,8 +35,7 @@ class PeopleController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:user_id])
-    @person = @user.people.find(params[:id])
+    @person = current_user.people.find(params[:id])
     @person.destroy
     redirect_to users_path
   end

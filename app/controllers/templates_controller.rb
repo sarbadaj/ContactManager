@@ -4,13 +4,11 @@ class TemplatesController < ApplicationController
   end
 
   def index
-    @user = User.find(params[:user_id])
-    @templates = @user.templates
+    @templates = current_user.templates
   end
 
   def create
-    @user = User.find(params[:user_id])
-    @template = @user.templates.new(template_params)
+    @template = current_user.templates.new(template_params)
     if @template.save
       redirect_to users_path
     else
@@ -20,18 +18,15 @@ class TemplatesController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:user_id])
-    @template = @user.templates.find(params[:id])
+    @template = current_user.templates.find(params[:id])
   end
 
   def show
-    @user = User.find(params[:user_id])
-    @template = @user.templates.find(params[:id])
+    @template = current_user.templates.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:user_id])
-    @template = @user.templates.find(params[:id])
+    @template = current_user.templates.find(params[:id])
     if @template.update(template_params)
       redirect_to users_path
     else
@@ -40,8 +35,7 @@ class TemplatesController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:user_id])
-    @template = @user.templates.find(params[:id])
+    @template = current_user.templates.find(params[:id])
     @template.destroy
     redirect_to users_path
   end

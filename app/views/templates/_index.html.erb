@@ -4,9 +4,7 @@
       <h4>Email Templates</h4>
     </div>
     <div class="pull-right col-md-3">
-      <button class="btn btn-default nav">
-        <%= link_to "Create Template", new_user_template_path(current_user.id), remote: true %>
-      </button>
+      <%= link_to "Create Template", new_user_template_path(current_user.id), :class => 'navbar-link btn btn-default', remote: true %>
     </div>
   </div>
 </nav>

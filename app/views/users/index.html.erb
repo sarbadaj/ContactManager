@@ -1,11 +1,13 @@
 <div class="row container">
   <div class="col-md-3 btn-group btn-group-vertical">
-    <button class="btn btn-default nav">
-      <%= link_to "Email Templates", user_templates_path(current_user.id), remote: true %>
-    </button>
-    <button class="btn btn-default nav">
-      <%= link_to "People", user_people_path(current_user.id), remote: true %>
-    </button>
+    <div>
+      <%= link_to "Email Templates", user_templates_path(current_user.id), :class => 'navbar-link btn btn-default', remote: true %>
+    </div>
+    <div>
+      <%= link_to "People", user_people_path(current_user.id), :class => 'navbar-link btn btn-default', remote: true %>
+    </div>
   </div>
   <div class="col-md-9 new_person edit_person person_show template_index new_template edit_template template_show" id="person_index">
+  	<%= render :partial => 'templates/index', :locals => {:templates=>@templates}%>
+  </div>
 </div>
