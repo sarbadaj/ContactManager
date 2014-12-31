@@ -12,7 +12,7 @@
         <%= form_for(person, url: user_person_path(person.user, person), html: {method: "patch"} ) do |f| %>
           <span class="label label-success">Name:</span>
           <p>
-            <%= f.text_field :name, :label => "Name", :class => "form-control input-sm chat-input" %>
+            <%= f.text_field :name, :class => "form-control input-sm chat-input" %>
           </p>
           <span class="label label-success">Phone no:</span>
           <p>

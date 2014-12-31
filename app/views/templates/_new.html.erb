@@ -1,0 +1,28 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="row container">
+      <h4>Email Templates >> Create</h4>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-5 col-md-3">
+      <div class="form-login">
+        <%= form_for(template, url: user_templates_path(current_user.id), html: {method: "post"} ) do |f| %>
+          <span class="label label-success">Title:</span>
+          <p>
+            <%= f.text_field :title, :class => "form-control input-sm chat-input" %>
+          </p>
+          <span class="label label-success">Content:</span>
+          <p>
+            <%= f.text_area :content, :size => "60x12", :class => "form-control input-sm chat-input" %>
+          </p>
+          <p>
+            <%= f.submit 'Save' %>
+          </p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

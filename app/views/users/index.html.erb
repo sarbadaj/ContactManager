@@ -1,11 +1,11 @@
 <div class="row container">
   <div class="col-md-3 btn-group btn-group-vertical">
     <button class="btn btn-default nav">
-      Emil Templates
+      <%= link_to "Email Templates", user_templates_path(current_user.id), remote: true %>
     </button>
     <button class="btn btn-default nav">
       <%= link_to "People", user_people_path(current_user.id), remote: true %>
     </button>
   </div>
-  <div class="col-md-9 new_person edit_person person_show" id="person_index">
+  <div class="col-md-9 new_person edit_person person_show template_index new_template edit_template template_show" id="person_index">
 </div>
