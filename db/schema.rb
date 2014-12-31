@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141230162646) do
+ActiveRecord::Schema.define(version: 20141231072641) do
 
   create_table "people", force: true do |t|
     t.string   "name"
@@ -23,6 +23,16 @@ ActiveRecord::Schema.define(version: 20141230162646) do
   end
 
   add_index "people", ["user_id"], name: "index_people_on_user_id", using: :btree
+
+  create_table "templates", force: true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "templates", ["user_id"], name: "index_templates_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
