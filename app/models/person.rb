@@ -3,5 +3,5 @@ class Person < ActiveRecord::Base
 
   validates :name, presence: true
   validates :phone_no, presence: true
-  validates :email, uniqueness: true
+  validates :email, presence:true
 end

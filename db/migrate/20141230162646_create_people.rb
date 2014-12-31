@@ -3,7 +3,7 @@ class CreatePeople < ActiveRecord::Migration
     create_table :people do |t|
       t.string :name
       t.string :email
-      t.integer :phone_no
+      t.string :phone_no
       t.references :user, index: true
 
       t.timestamps
