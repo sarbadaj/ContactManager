@@ -24,6 +24,11 @@ class PeopleController < ApplicationController
     @person = @user.people.find(params[:id])
   end
 
+  def show
+    @user = User.find(params[:user_id])
+    @person = @user.people.find(params[:id])
+  end
+
   def update
     @user = User.find(params[:user_id])
     @person = @user.people.find(params[:id])

@@ -19,7 +19,7 @@
     </thead>
     <% people.each do |person| %>
       <tr>
-      <td><%=link_to person.name.humanize%></td>
+      <td><%=link_to person.name.humanize, user_person_path(person.user, person), remote: true %></td>
       <td>
       <%= link_to '<i class="fa fa-arrow-circle-right"></i>'.html_safe, edit_user_person_path(person.user, person), remote: true%>
        &nbsp;&nbsp;
