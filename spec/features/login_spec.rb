@@ -1,6 +1,6 @@
 require 'spec_helper'
 feature "sign up and sign in", :js => true do
-  scenario "sign in specific user" do
+  scenario "sign up specific user" do
     visit '/'
     fill_in 'Email', :with => "sarbada@Jyaasa.com"
     fill_in 'Password', :with => "12345678"
