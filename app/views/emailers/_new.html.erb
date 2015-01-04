@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-5 col-md-3">
+      <div class="form-login">
+        <%= form_for(emailer, url: emailers_path, html: {method: "post"} ) do |f| %>
+          <span class="label label-success">Subject:</span>
+          <p>
+            <%= f.text_field :subject, :class => "form-control input-sm chat-input" %>
+          </p>
+          <span class="label label-success">To:</span>
+          <p>
+            <%= f.text_field :to, :class => "form-control input-sm chat-input" %>
+          </p>
+          <span class="label label-success">Body</span>
+          <p>
+            <%= f.text_area :body, :size => "60x12", :class => "form-control input-sm chat-input" %>
+          </p>
+          <p>
+            <%= f.submit 'Send' %>
+          </p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
